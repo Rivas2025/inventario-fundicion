@@ -1,7 +1,7 @@
 {
-  "name": "CVG Inventario Fundición",
-  "short_name": "CVG Stock",
-  "description": "Sistema de Trazabilidad CVG Fábrica de Fábricas",
+  "name": "CIFFHCF Inventario Fundición",
+  "short_name": "CIFFHCF G-23",
+  "description": "Sistema de Trazabilidad CVG Complejo Industrial Fábrica de Fábricas",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#121212",

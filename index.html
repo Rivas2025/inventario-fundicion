@@ -510,15 +510,14 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
     
     <button type="button" class="btn-whatsapp" onclick="copiarWhatsApp()">📱 COPIAR PARA WHATSAPP</button>
 </div>
-
 <textarea id="copyArea" style="position: absolute; left: -9999px;"></textarea>
 <script>
     // --- LÓGICA DE CORRELATIVIDAD ---
     const baseDatosMateriales = {
-        "Insumo Metálico": ["RODILLO DE LINGOTERA(VENALUM)", "RETORNO DE FUNDICIÓN", "BARROTES(SIDOR)", "VIRUTA DE ACERO", "SIFÓN MKA4(VENALUM)", "CUERPO MOLEDORES MINERÍA", "CONO REGULADOR DE FLUJO(VENALUM)", "BARROTES FABRICADOS CON PLANCHONES(MATERIALES DESINCORPORADOS)", "MATERIAL DE RUEDA(METRO DE LOS TEQUES)", "MATERIAL DE DISCO MOTRICES (IFE)", "MATERIAL DE DISCO DE REMOLQUE(IFE)"],
-        "Insumos Químicos": ["RESINA", "CATALIZADOR", "BENTONITA", "ALCOHOL", "PINTURA REFRACTARIA DE ZICORNIO VELVACOAT ZA-200","PINTURA REFRACTARIA DE ZICORNIO VELVACOAT ZA-300","PINTURA A BASE DE GRAFITO(MARCA GRAFISOL)","PINTURA DESMOLDEANTE","CASCARILLA DE ARROZ","ESCORIFICANTE", "GRAFITO CARBURANTE"],
-        "Materiales y Herramientas": ["REFRACTARIO 9AE", "AISLANTE ELÉCTRICO", "APISONABLE", "TERMOCUPLA PARA PIRÓMETRO DE INMERSIÓN"],
-        "Ferroaleaciones": ["FERROSILICIO (FeSi)", "FERROMANGANESO (FeMn)", "FERROCROMO ALTO", "MAGNESIO (FeMg)", ""]
+        "Insumo Metálico": ["ALUMINIO", "COBRE", "RODILLO DE LINGOTERA(VENALUM)", "MOLDE DE LINGOTERA(VENALUM)", "BARROTES(SIDOR)", "SIFÓN MKA4(VENALUM)", "CUERPO MOLEDORES MINERÍA", "CUERPO MOLEDORES (CARBONORCA)", "CUERPO MOLEDORES (CORPORACIÓN DEL CEMENTO)", "CONO REGULADOR DE FLUJO(VENALUM)", "BARROTES FABRICADOS CON PLANCHONES(MATERIALES DESINCORPORADOS)", "MATERIAL DE RUEDA(METRO DE LOS TEQUES)", "MATERIAL DE DISCO MOTRICES (IFE)", "MATERIAL DE DISCO DE REMOLQUE(IFE)", "AEROENFRIADORES PDVSA (RUEDA DENTADA)", "FERROMINERA (RUEDAS)"],
+        "Insumos Químicos": ["RESINA", "CATALIZADOR", "BENTONITA", "ALCOHOL", "PINTURA REFRACTARIA DE ZICORNIO VELVACOAT ZA-200","PINTURA REFRACTARIA DE ZICORNIO VELVACOAT ZA-300", "PINTURA REFRACTARIA A BASE DE GRAFITO VELVACOAT QZG-7020","PINTURA A BASE DE GRAFITO(MARCA GRAFISOL)","PINTURA DESMOLDEANTE","CASCARILLA DE ARROZ","ESCORIFICANTE", "GRAFITO CARBURANTE", "POLVO EXOTÉRMICO"],
+        "Materiales y Herramientas": ["REFRACTARIO 9AE", "AISLANTE ELÉCTRICO (MASILLA)", "APISONABLE", "TERMOCUPLA PARA PIRÓMETRO DE INMERSIÓN", "CEPILLO DE BARRER", "PISTOLA INDUSTRIAL", "MANDARRIA", "CAMISA EXOTÉRMICA", "PALA", "BARRA METÁLICA", "CHICURA", "BENTONITA CÁLCICA Y SÓDICA"],
+        "Ferroaleaciones": ["FERROSILICIO (FeSi)", "FERROMANGANESO (FeMn)", "FERROCROMO ALTO", "FERROCROMO BAJO", "MAGNESIO (FeMg)", "SILICIO METALICO", ]
     };
 
     let inventory = JSON.parse(localStorage.getItem('foundry_v5')) || {};
@@ -545,7 +544,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
         return valor.toLocaleString('es-VE', { minimumFractionDigits: dec, maximumFractionDigits: dec });
     }
 
-    function procesar(tipo) {
+     function procesar(tipo) {
         // En tu función procesar(), limpia el nombre:
         const name = document.getElementById('itemName').value.trim().toUpperCase().replace(/['"]/g, '');
         let rawQty = document.getElementById('itemQty').value.replace(',', '.');
